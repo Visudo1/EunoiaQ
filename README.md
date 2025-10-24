@@ -43,3 +43,40 @@
 ---
 
 ## Struktur Proyek
+
+
+---
+
+## Konsep Implementasi (Inti Kode)
+
+- Struktur halaman dikelola melalui variabel `pages` dan `activePage`.
+- Navbar bawah dibuat sebagai objek `navbar` dengan properti:
+  - height, items, bgColor, itemColor, itemActiveColor, font
+- Fungsi `love.draw()` menggambar konten halaman sesuai `activePage` dan menampilkan navbar.
+- Ketika item navbar diklik, `activePage` diperbarui untuk menampilkan halaman yang dipilih.
+
+Contoh inti kode (ringkas):
+
+```lua
+-- Contoh ringkas inti (main.lua)
+function love.load()
+  pages = { "Explorer", "Shop", "Home", "Wallet", "Profile" }
+  activePage = "Home"
+  -- inisialisasi navbar...
+  -- inisialisasi konten Home
+end
+
+function love.draw()
+  if activePage == "Home" then
+    renderHome()
+  else
+    -- konten halaman lain (sementara)
+  end
+
+  -- gambar navbar
+  -- highlight active tab
+end
+
+function love.mousepressed(mx, my, button)
+  -- deteksi klik pada tombol navbar untuk mengganti activePage
+end
