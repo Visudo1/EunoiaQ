@@ -1,0 +1,22 @@
+(main.lua)
+function love.load()
+  pages = { "Explorer", "Shop", "Home", "Wallet", "Profile" }
+  activePage = "Home"
+  -- inisialisasi navbar...
+  -- inisialisasi konten Home
+end
+
+function love.draw()
+  if activePage == "Home" then
+    renderHome()
+  else
+    -- konten halaman lain (sementara)
+  end
+
+  -- gambar navbar
+  -- highlight active tab
+end
+
+function love.mousepressed(mx, my, button)
+  -- deteksi klik pada tombol navbar untuk mengganti activePage
+end
